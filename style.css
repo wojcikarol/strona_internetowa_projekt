@@ -1,0 +1,124 @@
+body {
+    background-image: url("img/back.jpg");
+    background-size: cover;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+#container {
+    width: 1000px;
+    margin: auto; /* Shorthand for margin-left and margin-right */
+}
+
+#tile1 {
+    float: left;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    width: 980px;
+    height: auto; 
+    background-color: rgb(7, 99, 185);
+    border-radius: 1%;
+}
+
+.miasto,
+.godzina {
+    text-align: left;
+    margin: 15px;
+    float: left; 
+}
+
+.miasto {
+    font-size: 60px;
+}
+
+.ikona img {
+    float: left;
+    width: 150px;
+    height: 150px;
+    vertical-align: middle; 
+}
+
+.ikona {
+    width: 50%;
+    float: left;
+    display: flex; 
+    align-items: center;
+    text-align: left;
+    font-size: 60px;
+}
+
+.inne {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px; 
+}
+
+.dane {
+    text-align: center; 
+    margin: 0 5px;
+}
+
+a {
+    float: left;
+}
+
+.dane p{
+    color: lightgray;
+    font-weight: bold;
+}
+
+.godzina img {
+    width: 15px; 
+    height: 15px; 
+    margin: 0 5px; 
+}
+
+.spacja {
+    margin-left: 20px; 
+}
+
+.tile {
+    float: left;
+    text-align: center;
+    margin: 10px;
+    width: 480px;
+    height: 284px;
+    background-color: rgb(7, 99, 185);
+    border-radius: 5%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+footer {
+    height: 20px;
+    padding: 10px;
+    margin: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.tile:hover {
+    transform: scale(1.05); 
+    filter: brightness(30%); 
+}
+
+.tile .magnify-text {
+    display: none; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white; 
+    transition: color 0.5s ease; 
+}
+
+.tile:hover .magnify-text {
+    color: rgb(255, 255, 255); 
+    display: block; 
+}
