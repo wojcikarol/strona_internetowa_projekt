@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aplikacja Pogodowa</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="container">
+        <h1>Pogoda</h1>
+    
+        <div id="weatherData">
+            <div id="tile1">
+                
+                <button id="searchButton" onclick="szukajPogody()" class="custom-button">Szukaj</button>
+                    </div>
+            </div>
+           
+    
+            <div style="clear: both;"></div>
+    
+            <div id="pogodana3"class="tile"> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Miejsca</th>
+                            <th>Dzisiaj</th>
+                            <th>Jutro</th>
+                            <th>Wtorek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Warszawa, Mazowieckie</td>
+                            <td>21°C</td>
+                            <td>12°C</td>
+                            <td>12°C</td>
+                        </tr>
+                        <tr>
+                            <td>Wrocław, Dolny Śląsk</td>
+                            <td></td>
+                            <td>12°C</td>
+                            <td>13°C</td>
+                        </tr>
+                        <tr>
+                            <td>Kraków, Małopolska</td>
+                            <td>22°C</td>
+                            <td>15°C</td>
+                            <td>11°C</td>
+                        </tr>
+                        <tr>
+                            <td>Poznań, Wielkopolska</td>
+                            <td>16°C</td>
+                            <td>14°C</td>
+                            <td>12°C</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="tile"></div>
+            
+        </div>
+    
+        <div style="clear: both;"></div>
+        <footer>Aplikacja pogodowa stworzona przez Jakub Wiatr i Karol Wójcik</footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-Xe4m+BXWJzBjzdd6Suwb2H4flOzGFMKeNuvoFv35+qGXzW1v6inIa0Zv8czIhCQT" crossorigin="anonymous"></script>
+</body>
+</html>
