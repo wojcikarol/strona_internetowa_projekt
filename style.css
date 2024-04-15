@@ -1,5 +1,5 @@
 body {
-    background-image: url("img/back1.png");
+    background-image: url("img/tlo.png");
     background-size: cover;
     color: white;
     font-family: 'Lato', sans-serif;
@@ -175,7 +175,8 @@ footer {
    
 }
 .table {
-    width: 100%;
+    width: auto;
+    height: auto;
     border-collapse: collapse;
 }
 
@@ -213,4 +214,16 @@ tbody tr:hover td {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+}
+.table #pogodana3id {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#Burze {
+    background-image: url("img/burze.jpg");
+    background-size: cover;
+    background-position: center;
+  
 }

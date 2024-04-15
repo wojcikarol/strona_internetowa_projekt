@@ -47,7 +47,6 @@ function pobierzDanePogodowe(miasto) {
                     </div>
                 </div>`;
             
-          
             aktualizujTabelePogody(data);
         })
         .catch(error => {
@@ -70,15 +69,14 @@ function aktualizujTabelePogody(data) {
         const tempWtorek = Math.floor(Math.random() * 10) + tempDzisiaj - 5;
 
         const komorki = miejsce.querySelectorAll("td");
-
-        if (index === 0) {
-            komorki[1].textContent = `${tempDzisiaj}°C`;
-            komorki[2].textContent = `${tempJutro}°C`;
-            komorki[3].textContent = `${tempWtorek}°C`;
-        } else {
-            komorki[1].textContent = `${tempDzisiaj + index}°C`;
-            komorki[2].textContent = `${tempJutro + index}°C`;
-            komorki[3].textContent = `${tempWtorek + index}°C`;
-        }
+        
     });
 }
+
+
+document.getElementById("pogodana3").addEventListener("click", function() {
+    window.location.href = "pogodana3.html";
+});
+document.getElementById("Burze").addEventListener("click", function() {
+    window.location.href = "burze.html";
+});
