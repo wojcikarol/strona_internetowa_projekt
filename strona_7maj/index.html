@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja Pogodowa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="logo">
+
+        
+        <h1><img id="weatherIcon" src="img/slonce.png" width="50px" height="50px" alt="logo">
+            <input type="range" id="sunMoonSlider" min="0" max="1" step="1" value="0" onchange="changeSunMoon()"> Pogoda</h1>
+
+    </div>
+        <div id="pasekpogody">
+
+        
+        <div id="ww_01ca407a53265" v='1.3' loc='auto'  a='{"t":"ticker","lang":"pl","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"rgba(7,99,185,1)","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>More forecasts: <a href="https://oneweather.org/warsaw/30_days/" id="ww_01ca407a53265_u" target="_blank">Weather forecast Warsaw 30 days</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_01ca407a53265"></script>
+       </div>
+       <div class="cloud">
+        <img src="img/clouds.png" alt="Chmura">
+    </div>
+        <div id="weatherData">
+            <div id="tile1">
+                <div class="form-group"> 
+                    <div class="custom-input-decorator"></div>
+                    <button id="searchButton" onclick="szukajPogody()" class="custom-button">Szukaj</button>
+                </div>
+                <!-- Lista niedawno wyszukiwanych miast -->
+                <ul id="recentCitiesList" style="display: none;"></ul>
+            </div>
+        </div>
+       
+    
+        <div style="clear: both;"></div>
+    
+        <div id="pogodana3" class="tile"> 
+  
+            <link type="text/css" rel="stylesheet" href="https://www.meteoprog.com/css/winformer.min.css?id=100">
+
+            <div class="meteoprog-informer" style="width: auto" data-params='{"city_ids":"1408,1409,1400,1410","domain":"https://www.meteoprog.pl/pl/","id":"6639dad21ee08bb7d5099c42","lang":"pl"}'>
+        
+              
+              <a title="Pogoda w mieście Warszawa" target="_blank" href="https://www.meteoprog.pl/pl/weather/Warszawa/">
+                <img style="margin: 0 auto; display: block; width: 150%; height: 100%;" src="https://www.meteoprog.com/images/preloader.gif" alt="Loading..." onclick="powiekszTo()">
+            </a>
+                <a target="_blank" class="constructor__met2wlink" href="https://www.meteoprog.pl/pl/review/Warszawa/">Pogoda przez 2 tygodnie</a>
+              
+                <a title="Pogoda w mieście Kraków" target="_blank" href="https://www.meteoprog.pl/pl/weather/Krakow/">
+                  <img style="margin: 0 auto; display: block" src="https://www.meteoprog.com/images/preloader.gif" alt="Loading...">
+                </a>
+                <a target="_blank" class="constructor__met2wlink" href="https://www.meteoprog.pl/pl/review/Krakow/">Pogoda przez 2 tygodnie</a>
+              
+                <a title="Pogoda w mieście Poznań" target="_blank" href="https://www.meteoprog.pl/pl/weather/Poznan/">
+                  <img style="margin: 0 auto; display: block" src="https://www.meteoprog.com/images/preloader.gif" alt="Loading...">
+                </a>
+                <a target="_blank" class="constructor__met2wlink" href="https://www.meteoprog.pl/pl/review/Poznan/">Pogoda przez 2 tygodnie</a>
+              
+                <a title="Pogoda w mieście Wrocław" target="_blank" href="https://www.meteoprog.pl/pl/weather/Wroclaw/">
+                  <img style="margin: 0 auto; display: block" src="https://www.meteoprog.com/images/preloader.gif" alt="Loading...">
+                </a>
+                <a target="_blank" class="constructor__met2wlink" href="https://www.meteoprog.pl/pl/review/Wroclaw/">Pogoda przez 2 tygodnie</a>
+              
+        
+              <a class="constructor__metlink" target="_blank" href="https://www.meteoprog.pl/pl/">
+                <img style="display: block; margin: 0 auto;" alt="Meteoprog" src="https://www.meteoprog.com/images/meteoprog-inf.png">
+              </a>
+            </div>
+            <script type="text/javascript" src="https://www.meteoprog.com/js/winformer.min.js?id=100"></script>
+            
+    </div>
+    <script type="text/javascript" src="https://www.meteoprog.com/js/winformer.min.js?id=100"></script>
+    
+        </div>
+
+        <div class="tile" id="Burze">
+            <iframe src="https://www.meteoblue.com/pl/pogoda/mapy/widget?windAnimation=0&windAnimation=1&gust=0&gust=1&satellite=0&satellite=1&cloudsAndPrecipitation=0&cloudsAndPrecipitation=1&temperature=0&temperature=1&sunshine=0&sunshine=1&extremeForecastIndex=0&extremeForecastIndex=1&geoloc=detect&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=5&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true"  loc='auto' sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 100%; height: 720px; border-radius: 5%;"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/pl/pogoda/mapy/index?utm_source=weather_widget&utm_medium=linkus&utm_content=map&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener"></a></div>
+        </div>
+            
+    </div>
+    
+    <div style="clear: both;"></div>
+    <footer>Aplikacja pogodowa stworzona przez Jakub Wiatr i Karol Wójcik</footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-Xe4m+BXWJzBjzdd6Suwb2H4flOzGFMKeNuvoFv35+qGXzW1v6inIa0Zv8czIhCQT" crossorigin="anonymous"></script>
+</body>
+</html>
