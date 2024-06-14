@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #f1f1f1; 
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body.light-theme {
+    background-color: #f5f5f5; 
+    color: #333333; 
+}
+
+body.light-theme .main-container, 
+body.light-theme .weather-app, 
+body.light-theme .left-section, 
+body.light-theme .right-section, 
+body.light-theme .additional-info > div, 
+body.light-theme .forecast-section {
+    background-color: #ffffff; 
+    color: #333333; 
+}
+
+body.light-theme input[type="text"] {
+    background-color: #f0f0f0; 
+    color: #333333; 
+}
+
+body.light-theme .search-btn {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+body.light-theme .footer, 
+body.light-theme .header {
+    background-color: #f5f5f5;
+    color: #333333; 
+}
+
+
+
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    width: 100%;
+}
+
+.weather-app, .left-section, .right-section {
+    background-color: #333333; 
+    flex: 1 1 300px;
+    margin: 15px;
+    padding: 30px;
+    border-radius: 15px;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.weather-app {
+    max-width: 900px;
+    width: 100%;
+}
+
+.left-section {
+    max-width: 400px;
+    width: 100%;
+}
+
+.right-section {
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 15px;
+    font-size: 1rem;
+    height: 3.5rem;
+    background-color: #4d4d4d; 
+    color: #f1f1f1; 
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #2980b9;
+}
+
+.search-btn {
+    background-color: #3498db;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.city-date-section .city, .city-date-section .date, .temperature-info .description span {
+    animation: slideInText 1s ease-in-out;
+}
+
+.city-date-section {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.city-date-section .city {
+    font-size: 2rem;
+    opacity: 0.9;
+}
+
+.city-date-section .date {
+    background-color: #2c2c2c;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.temperature-info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.temperature-info .temp {
+    font-size: 10rem;
+    animation: pulse 2s infinite;
+}
+
+.temperature-info .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: bounce 2s infinite;
+}
+
+.temperature-info .description i {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    animation: rotateIcon 5s linear infinite; 
+}
+
+
+.temperature-info .description span {
+    font-size: 1.5rem;
+}
+
+.additional-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.wind-info,
+.humidity-info,
+.visibility-info {
+    width: 50%;
+}
+
+.wind-info,
+.humidity-info,
+.visibility-info {
+    background-color: #4d4d4d; 
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    animation: fadeInTile 1s ease-in-out, floatTile 5s ease-in-out infinite;
+}
+
+.weather-forecast-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 2px solid #3498db;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #4d4d4d;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+}
+
+.forecast-section {
+    background-color: #333333; /* Darker forecast section background */
+    margin: 50px 0;
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    animation: bgTransition 10s infinite alternate;
+}
+
+.hourly-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hourly-forecast-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 2px solid #3498db;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #4d4d4d; /* Darker hourly item background */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+    animation: slideInFromLeft 0.5s ease-in-out;
+}
+
+.tile {
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 15px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.ostatnie {
+    background-color: #333333; /* Darker background */
+    border-radius: 15px;
+    height: auto;
+    max-height: 250px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 30px;
+    margin: 15px 0;
+}
+
+#city-suggestions {
+    border: 1px solid #3498db;
+    border-radius: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 5px;
+    background-color: #4d4d4d; /* Darker suggestions background */
+    color: #f1f1f1;
+    position: absolute;
+    z-index: 1000;
+    animation: slideIn 0.5s ease;
+}
+
+#city-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#city-suggestions div:hover {
+    background-color: #666666; /* Darker hover background */
+}
+
+#top-cities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#top-cities-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#top-cities-list li:hover {
+    background-color: #666666; /* Darker hover background */
+    border-radius: 15px;
+}
+.theme-toggle-btn {
+    background-color: #3498db;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+
+.footer {
+    width: 100%;
+    background-color: #1a1a1a; /* Darker footer background */
+    color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+.header {
+    width: 100%;
+    background-color: #1a1a1a; /* Darker header background */
+    color: #f1f1f1;
+    padding: 15px;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInText {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInTile {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatTile {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bgTransition {
+    0% { background-color: #333333; }
+    100% { background-color: #2c2c2c; }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 5s linear infinite;
+}

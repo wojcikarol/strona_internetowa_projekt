@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <title>Aplikacja Pogodowa</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="header">
+        
+                   
+            <header class="header">
+                <h1>Aplikacja Pogodowa</h1>
+                <button id="theme-toggle-btn" class="theme-toggle-btn">Zmień motyw</button>
+            </header>
+            
+        
+    </header>
+    <div class="main-container">
+        <div class="left-section">
+            <h2> Aplikacja pogodowa <img src="img/slonce.png" alt="logo" width="60px" height="60px" class="rotate"> </h2>
+
+            <div class="view">
+                <br>
+                <h3>Pogoda na najbliższe godziny: </h3>
+                <div id="hourly-forecast" class="hourly-forecast"></div>
+            </div>
+        </div>
+        <div class="weather-app">
+            <form class="search-form" action="">
+                <input class="city-input" type="text" placeholder="Wpisz nazwę miasta" />
+                <div id="city-suggestions"></div>
+                <button class="search-btn" type="submit">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+            <div class="city-date-section">
+                <h2 class="city">Tarnów</h2>
+                <p class="date">7 stycznia 2024</p>
+            </div>
+            <div class="temperature-info">
+                <div class="description">
+                    <i class="material-icons" style="animation: rotateIcon 5s linear infinite;">sunny</i>
+                    <span class="description-text" style="animation: bounce 2s infinite;">Słonecznie</span>
+                </div>
+                <div class="temp" style="animation: pulse 2s infinite;">20°</div>
+            </div>
+            <div class="additional-info">
+                <div class="wind-info">
+                    <i class="material-icons">air</i>
+                    <div>
+                        <h3 class="wind-speed">4 KM/H</h3>
+                        <p class="wind-label">Wiatr</p>
+                    </div>
+                </div>
+                <div class="humidity-info">
+                    <i class="material-icons">water_drop</i>
+                    <div>
+                        <h3 class="humidity">45%</</h3>
+                        <p class="humidity-label">Wilgotność</p>
+                    </div>
+                </div>
+                <div class="visibility-info">
+                    <i class="material-icons">visibility</i>
+                    <div>
+                        <h3 class="visibility-distance">4 KM</h3>
+                        <p class="visibility-label">Widoczność</p>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast-section" id="weather-forecast"></div>
+            <script type="text/javascript" src="https://www.meteoprog.com/js/winformer.min.js?id=100"></script>
+        </div>
+        <div class="right-section">
+            <div class="ostatnie">
+                <h3>Najczęściej wyszukiwane miasta:</h3>
+                <ul id="top-cities-list"></ul>
+            </div>
+            <div class="tile" id="Burze">
+                <iframe src="https://www.meteoblue.com/pl/pogoda/mapy/widget?windAnimation=0&windAnimation=1&gust=0&gust=1&satellite=0&satellite=1&cloudsAndPrecipitation=0&cloudsAndPrecipitation=1&temperature=0&temperature=1&sunshine=0&sunshine=1&extremeForecastIndex=0&extremeForecastIndex=1&geoloc=detect&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=5&autowidth=auto" frameborder="0" scrolling="NO" allowtransparency="true" loc='auto' sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 100%; height: 720px"></iframe>
+                <div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/pl/pogoda/mapy/index?utm_source=weather_widget&utm_medium=linkus&utm_content=map&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener"></a></div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Aplikacja Pogodowa. Wykonawcy: Jakub Wiatr & Karol Wójcik</p>
+    </footer>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const body = document.body;
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            if (body.classList.contains('light-theme')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-theme');
+            }
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
